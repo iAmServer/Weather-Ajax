@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/scss/style.css">
+    <title>Weather</title>
+</head>
+
+<body>
+    <div id="overlay">
+        <div class="cv-spinner">
+            <span class="spinner"></span>
+        </div>
+    </div>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="p-4 pb-5 pt-5">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="loc" placeholder="Search location" aria-label="Search">
+                    <div class="input-group-append">
+                        <button type="button" id="btnSearch" class="input-group-text"><i
+                                class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 pt-5">
+                <ul class="list-unstyled components mb-5" id="history"></ul>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                    <h5>Open Weather</h5>
+                </div>
+            </nav>
+
+            <h3 class="mb-4" id="name">{{Location}}</h3>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 text-center mb-3">
+                            <img src="" id="image" width="100" class="img img-responsive" />
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p><b>Temperature</b></p>
+                                </div>
+                                <div class="col-6">
+                                    <p id="temp"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p><b>Humidity</b></p>
+                                </div>
+                                <div class="col-6">
+                                    <p id="hum"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p><b>Wind Speed</b></p>
+                                </div>
+                                <div class="col-6">
+                                    <p id="speed"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p><b>UV Index</b></p>
+                                </div>
+                                <div class="col-6" id="uv"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 class="mt-5">5 Days Forecast</h4>
+            <div class="row bg-secondary p-3 text-center" style="border-radius: 5px;" id="days">
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/popper.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
